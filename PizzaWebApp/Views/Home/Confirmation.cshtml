@@ -1,0 +1,42 @@
+﻿@*
+Confirmation.cshtml
+Author: Krista Smith
+Date: 12/11/23
+Description: This is the page a customer will be taken to after submitting their name and pickup/delivery choice. It will display:
+	A Thank you and full order recap is provided on the final screen
+	Thank you for your order, Name
+	Here's a list of the pizza(s) you ordered
+	Your order total is $
+	We will be delivering to your home at the Delivery Address soon!
+	OR Your order will be ready for pickup at approximately Now + 30 minutes
+*@
+@* @model PizzaWebApp.Models.CustomerOrder
+ *@
+@*  @model IEnumerable<PizzaWebApp.Models.CustomerOrder> *@
+	@model PizzaWebApp.Models.CustomerOrder
+
+<h1>Thank you for your order, @Model.CustomerName!</h1>
+<p>
+	Here is a list of the pizzas you ordered:
+@* 	<a asp-action="CustomerOrders">TESSTING</a>
+ *@
+	@* @foreach(CustomerOrder c in Model.CustomerName)
+	{
+		<p>@c.PizzaName</p>
+		<p>@c.Size</p>
+		<p>@c.Topping</p>
+	} *@
+</p>
+<p>
+	Your order total is $@Model.TotalPrice.
+</p>
+@if (Model.WillDeliver == true)
+{
+	// if the customer has requested delivery:
+	@:We will be delivering to your home at @Model.DeliveryAddress soon!
+}
+else
+{
+	@: Your order will be ready for pickup in approximately 30 minutes.
+}
+

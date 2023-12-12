@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* Index.cshtml
+Author: Krista Smith
+Date: 12/2/3
+Description: This file will display the home menu, which allows users to select
+    pizzas to order. It will also display prices. *@
+
+<div>
+    <h1>Menu</h1>
+    <p>Here is a selection of pizzas</p>
+</div>
+<div>
+    <p>
+        <h3>Original</h3>
+        Tomato sauce, mozzarella & oregano
+        <br />$18.00<br />
+        <img src="~/images/ivan-torres-MQUqbmszGGM-unsplash.jpg" />
+    </p>
+    <button>
+       <a asp-action="OrderForm" >Add to cart</a>
+    </button>
+</div>
+<div>
+    <p>
+        <h3>Salami</h3>
+        Tomato sauce, mozzarella & mild salami
+        <br />$15.00<br />
+        <img src="~/images/ivan-torres-MQUqbmszGGM-unsplash.jpg" />
+    </p>
+    <button>
+       <a asp-action="OrderForm" >Add to cart</a>
+    </button>
+</div><div>
+    <p>
+        <h3>Chicken</h3>
+        Tomato sauce, mozzarella, chicken, pineapple & bbq sauce
+        <br />$25.00<br />
+        <img src="~/images/ivan-torres-MQUqbmszGGM-unsplash.jpg" />
+    </p>
+    <button>
+       <a asp-action="OrderForm" >Add to cart</a>
+    </button>
+</div><div>
+    <p>
+        <h3>Hawaiian</h3>
+        Tomato sauce, mozzarella, ham & pineapple
+        <br />$16.00<br />
+        <img src="~/images/ivan-torres-MQUqbmszGGM-unsplash.jpg" />
+    </p>
+    <button>
+       <a asp-action="OrderForm" >Add to cart</a>
+    </button>
+</div>

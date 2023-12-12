@@ -1,0 +1,87 @@
+﻿@*
+	OrderForm.cshtml
+	Author: Krista Smith
+	Date: 12/8/23
+	Description:
+	This is the View for the Order Form.
+*@
+@{
+}
+@model PizzaWebApp.Models.CustomerOrder
+<form asp-action="OrderForm" method="Post">
+	<div asp-validation-summary="All"></div> @* show any errors in input from CustomerOrder.cs here *@
+	@* 	// post back to the controller *@	
+
+	@* Size options *@
+<p>
+<input asp-for="Size" checked="checked" id="Size" name="Size" type="radio" value="Medium"/><label asp-for="Size"> Medium</label>
+</p>
+<p>
+<input asp-for="Size" id="Size" name="Size" type="radio" value="Large"/><label asp-for="Size"> Large</label>
+</p>
+<p>
+<input asp-for="Size" id="Size" name="Size" type="radio" value="XLarge"/><label asp-for="Size"> XLarge</label>
+</p>
+
+  @* <input asp-for="Size"  type="radio"  id="flexRadioDefault1" checked>
+  <label asp-for="Size">
+	Medium
+  </label> *@
+@* </p>
+<p>
+  <input asp-for="Size"  type="radio" id="flexRadioDefault2" >
+  <label asp-for="Size">
+	Large (Add $4.00)
+  </label>
+</p>
+<p>  
+	<input asp-for="Size"  type="radio" id="flexRadioDefault3" >
+  <label asp-for="Size">
+	X-Large (Add $6.00)
+  </label>
+ </p>*@
+
+@* Topping options *@
+<p>
+	Add extra toppings ($1.50 each):
+</p>
+<div class="form-check">
+  <input asp-for="Topping" class="form-check-input" type="checkbox"  id="flexCheckSausage">
+  <label asp-for="Topping" class="form-check-label" for="flexCheckSausage">
+	Sausage
+  </label>
+</div>
+<div class="form-check">
+  <input asp-for="Topping" class="form-check-input" type="checkbox"  id="flexCheckPepperoni">
+  <label asp-for="Topping" class="form-check-label" for="flexCheckPepperoni">
+	Pepperoni
+  </label>
+</div><div class="form-check">
+  <input  asp-for="Topping" class="form-check-input" type="checkbox"  id="flexCheckExtraCheese">
+  <label asp-for="Topping" class="form-check-label" for="flexCheckExtraCheese">
+	Extra Cheese
+  </label>
+</div><div class="form-check">
+  <input asp-for="Topping" class="form-check-input" type="checkbox" id="flexCheckOlives">
+  <label asp-for="Topping" class="form-check-label" for="flexCheckOlives">
+	Olives
+  </label>
+</div><div class="form-check">
+  <input asp-for="Topping" class="form-check-input" type="checkbox" id="flexCheckAnchovies">
+  <label asp-for="Topping" class="form-check-label" for="flexCheckAnchovies">
+	Anchovies
+  </label>
+</div>
+
+  <p>
+	  <button type="cancel">
+		  <a asp-action="Index">Cancel</a>
+	  </button>
+	  <button>
+		  <a asp-action="Index">Add Another Pizza</a>
+	  </button>
+	  <button type="submit">
+		  <a asp-action="Checkout">Submit</a>
+	  </button>
+  </p>
+  </form>

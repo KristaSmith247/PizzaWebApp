@@ -1,0 +1,35 @@
+﻿@*
+	Cart.cshtml
+	Author: Krista Smith
+	Date: 12/2/23
+	Description: This file will create a view Checkout. It will display the
+	details of the customer order.
+*@
+
+@* collect name, pickup/delivery, delivery address
+ *@
+
+ @model PizzaWebApp.Models.CustomerOrder
+ <form asp-action="OrderForm" method="Post">
+	<div asp-validation-summary="All"></div>
+
+ <p>
+	 <label asp-for="CustomerName">Customer Name:</label>
+	 <input asp-for="CustomerName" />
+ </p>
+ <p>
+	<label>Would you like pick up or delivery?</label>
+	<select asp-for="WillDeliver">
+		<option value="">Choose an option</option>
+		<option value="true">Delivery</option>
+		<option value="false">Pickup</option>
+	</select>
+ </p>
+ <p>
+	 <label asp-for="DeliveryAddress">Delivery Address:</label>
+	 <input asp-for="DeliveryAddress" />
+ </p>
+	<button type="submit">		  
+		<a asp-action="Confirmation">Place Order</a>
+	</button>
+ </form>
